@@ -1,0 +1,26 @@
+
+
+<div class="card-header d-flex justify-content-between">
+<span>
+<h2>  Todo List </h2>
+</span>
+  <div>
+  <%= link_to 'New Todo List', new_todo_list_path, class: 'btn btn-primary btn-success'%> 
+  <!--make the New Todo List a button-->
+  </div>
+</div>
+
+<ul class='list-group'>
+<% @todo_lists.each do |todo_list| %>
+    <li class='list-group-item'>
+      <div class="d-flex justify-content-between"> 
+      <span>
+      <%= link_to todo_list.title, todo_list%>
+      </span>
+      <%= link_to todo_list_path(todo_list), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-light' do %>
+           <i class="fas fa-times-circle"></i>
+            <% end %> <!--delete-->
+      <%end%>
+      </div>
+    </li>
+</ul>
