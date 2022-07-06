@@ -1,6 +1,6 @@
 class TodoList < ApplicationRecord
   has_many :todo_items, dependent: :destroy
-  validates :title, presence:true
+  validates :title, presence: true
       #在新增todo list時 使用者在表單是必填
 
 

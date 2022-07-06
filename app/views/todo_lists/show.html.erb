@@ -15,15 +15,15 @@
 <div class="card-body">
 <!--get the progress bar from bootstrap-->
 <div class="progress mb-3">
-  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= @todo_list.percent_complete%>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @todo_list.percent_complete%>"></div>
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= @todo_list.percent_complete%>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @todo_list.percent_complete%>%"></div>
 </div>
 
 <!--add the first line with _form.-->
 <!--get the inline form from bootstrap to list all the todo items-->
 <%= form_for([@todo_list, @todo_item]) do |f| %>
-  <div class="input-group mb-4" style= width:97%>
+  <div class="input-group mb-4">
       <%= f.text_field :description, class: 'form_control', placeholder: 'Add a todo item' %>
-      <div class= "input-group-append" style= width:3%>
+      <div class= "input-group-append">
       <!--the submit botton for Add-->
       <%= f.submit "Add", class: "btn btn-primary input-group-btn"%>
    </div>
